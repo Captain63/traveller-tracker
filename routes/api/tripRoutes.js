@@ -13,7 +13,7 @@ router.post("/", async (req, res) => {
 });
 
 // Delete a trip
-router.delete("/:id", (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     const tripData = await Trip.destroy({
       where: {
@@ -22,7 +22,7 @@ router.delete("/:id", (req, res) => {
     });
 
     if (!tripData) {
-      res.status(404).json({ message: 'No trip found with that id!' });
+      res.status(404).json({ message: "No trip found with that id!" });
       return;
     }
 
