@@ -41,7 +41,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// DELETE a reader
+// DELETE a traveller
 router.delete("/:id", async (req, res) => {
   try {
     const travellerData = await Traveller.destroy({
